@@ -5,6 +5,12 @@ import ProductList from './components/ProductList';
 import Footer from './components/Footer';
 import AddItem from './components/AddItem';
 function App() {
+  const backgroundStyle = {
+    backgroundImage: 'url("/image.jpg")',
+    backgroundSize: 'cover',
+    height: '100vh',
+    width: '100%',
+  };
   const products=[
     {
       price:99999,
@@ -76,13 +82,16 @@ function App() {
 
   return (
     <>
+      <div style={backgroundStyle}>
       <Navbar/> 
       <main className='container' margin ='top'>
         <AddItem addItem={addItem}/>
       <ProductList productList={productList} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} removeItem={removeItem} />
       </main>
       <Footer totalAmount={totalAmount} resetQuantity={resetQuantity}/>
+      </div>
     </>
+    
   );
 }
 
